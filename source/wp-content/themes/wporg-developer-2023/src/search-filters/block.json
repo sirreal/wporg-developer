@@ -20,9 +20,10 @@
 		"typography": {
 			"fontSize": true,
 			"lineHeight": true
-		}
+		},
+                "interactivity": true
 	},
 	"editorScript": "file:./index.js",
 	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"viewScriptModule": "file:./view.js"
 }
