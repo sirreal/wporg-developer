@@ -6,8 +6,8 @@
 	"license": "GPL-2.0-or-later",
 	"private": true,
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^17.7.0",
-		"@wordpress/scripts": "27.1.0"
+		"@wordpress/eslint-plugin": "^18.1.0",
+		"@wordpress/scripts": "27.9.0"
 	},
 	"eslintConfig": {
 		"extends": "../../../../.eslintrc.js"
@@ -16,8 +16,8 @@
 		"extends": "../../../../.stylelintrc"
 	},
 	"scripts": {
-		"build": "wp-scripts build",
-		"start": "wp-scripts start",
+		"build": "wp-scripts build --experimental-modules",
+		"start": "wp-scripts start --experimental-modules",
 		"lint:js": "wp-scripts lint-js src",
 		"lint:css": "wp-scripts lint-style *.css src/**/*.scss",
 		"format": "wp-scripts format src"
