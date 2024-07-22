@@ -25,5 +25,6 @@
 	},
 	"workspaces": [
 		"source/wp-content/themes/wporg-developer-2023"
-	]
+	],
+	"packageManager": "yarn@1.22.22"
 }
