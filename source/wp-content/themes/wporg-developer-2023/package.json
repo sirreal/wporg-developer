@@ -1,7 +1,7 @@
 {
-    "name": "wporg-developer-2023",
-    "version": "1.0.0",
-    "description": "Theme for WordPress Developer Resources",
+	"name": "wporg-developer-2023",
+	"version": "1.0.0",
+	"description": "Theme for WordPress Developer Resources",
 	"author": "WordPress.org",
 	"license": "GPL-2.0-or-later",
 	"private": true,
@@ -16,8 +16,8 @@
 		"extends": "../../../../.stylelintrc"
 	},
 	"scripts": {
-		"build": "wp-scripts build",
-		"start": "wp-scripts start",
+		"build": "wp-scripts build --experimental-modules",
+		"start": "wp-scripts start --experimental-modules",
 		"lint:js": "wp-scripts lint-js src",
 		"lint:css": "wp-scripts lint-style *.css src/**/*.scss",
 		"format": "wp-scripts format src"
