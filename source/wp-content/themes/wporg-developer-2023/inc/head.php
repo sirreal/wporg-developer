@@ -41,10 +41,9 @@ class DevHub_Head {
 
 		if ( is_front_page() || is_feed() ) {
 			$parts['title'] = 'WordPress Developer Resources';
+			$parts['tagline'] = '';
 			return $parts;
-		}
-
-		if ( is_singular() && ( \DevHub\is_parsed_post_type( $post_type ) ) ) {
+		} elseif ( is_singular() && ( \DevHub\is_parsed_post_type( $post_type ) ) ) {
 			// Add post type to title if it's a parsed item.
 			if ( get_post_type_object( $post_type ) ) {
 				$parts['title'] .= " $sep " . get_post_type_object( $post_type )->labels->singular_name;
