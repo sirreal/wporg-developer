@@ -654,7 +654,7 @@ class DevHub_Formatting {
 					// The name is defined as a variable, so remove the leading '$'.
 					$name = ltrim( $name, '$' );
 				}
-				if ( $name ) {
+				if ( '' !== $name ) {
 					// Trailing space included for selection purposes. See #meta6585
 					$new_text .= "<code>{$name}</code> ";
 				}
