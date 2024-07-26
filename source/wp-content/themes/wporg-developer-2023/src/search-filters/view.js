@@ -1,32 +1,25 @@
-const init = () => {
-	const allButton = document.querySelector( '#wp-block-wporg-search-filters-all' );
-	const container = document.querySelector( '.wp-block-wporg-search-filters' );
+import * as IAPI from '@wordpress/interactivity';
 
-	if ( ! allButton || ! container ) {
-		return;
-	}
+const { state } = IAPI.store( 'wporg/developer/search-filters', {
+	state: {
+		isChecked: () => {
+			return state.selectedPostTypes.includes( IAPI.getContext().item[ 0 ] );
+		},
 
-	const inputs = container.querySelectorAll( 'input[type="checkbox"]' );
+		ariaIsPressedAll: () => {
+			return ! state.selectedPostTypes.length;
+		},
+	},
 
-	const hasFilterChecked = () => [ ...inputs ].some( ( input ) => input.checked );
+	/** @param {Event} evt */
+	handleChange: ( evt ) => {
+		const region = evt.target.closest( '[data-wp-interactive]' );
+		state.selectedPostTypes = [ ...region.querySelectorAll( ':checked' ) ].map( ( { value } ) => value );
+	},
 
-	const updateAllButtonState = () => {
-		allButton.setAttribute( 'aria-pressed', ! hasFilterChecked() );
-	};
-
-	allButton.addEventListener( 'click', ( event ) => {
-		event.preventDefault();
-		inputs.forEach( ( input ) => {
-			input.checked = false;
-		} );
-		updateAllButtonState();
-	} );
-
-	container.addEventListener( 'change', () => {
-		updateAllButtonState();
-	} );
-
-	updateAllButtonState();
-};
-
-window.addEventListener( 'load', init );
+	/** @param {Event} evt */
+	handleAll: ( evt ) => {
+		evt.preventDefault();
+		state.selectedPostTypes = [];
+	},
+} );
