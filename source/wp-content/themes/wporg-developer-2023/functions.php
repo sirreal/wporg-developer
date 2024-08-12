@@ -179,6 +179,7 @@ require_once __DIR__ . '/src/command-subcommand/block.php';
 require_once __DIR__ . '/src/page-title/index.php';
 require_once __DIR__ . '/src/reference-new-updated/block.php';
 require_once __DIR__ . '/src/resource-select/index.php';
+require_once __DIR__ . '/src/search-autocomplete/index.php';
 require_once __DIR__ . '/src/search-filters/index.php';
 require_once __DIR__ . '/src/search-post/index.php';
 require_once __DIR__ . '/src/search-results-context/index.php';

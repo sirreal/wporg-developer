@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "wporg/search-autocomplete",
+	"title": "Search Autocomplete",
+	"category": "layout",
+	"description": "List of filters for searching.",
+	"keywords": [ "search" ],
+	"textdomain": "wporg",
+	"attributes": {},
+	"supports": {
+		"inserter": false,
+		"interactivity": true
+	},
+	"style": "file:./style-index.css",
+	"viewScriptModule": "file:./view.js",
+	"render": "file:./render.php"
+}

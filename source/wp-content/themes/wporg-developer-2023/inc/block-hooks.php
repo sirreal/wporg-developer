@@ -26,8 +26,8 @@ function filter_search_block( $block_content, $block ) {
 	} elseif ( function_exists( 'wporg_is_handbook' ) && wporg_is_handbook() ) {
 		$block_content = get_block_content_by_home_url( $block_content, get_query_var( 'current_handbook_home_url' ) );
 	} else {
-		if ( isset( $block['attrs']['className'] ) && strpos( $block['attrs']['className'], 'wporg-filtered-search-form' ) ) {
-			$block_content = str_replace( '</form>', do_blocks( '<!-- wp:wporg/search-filters /-->' ) . '</form>', $block_content );
+		if ( isset( $block['attrs']['className'] ) && false !== strpos( $block['attrs']['className'], 'wporg-filtered-search-form' ) ) {
+			$block_content = str_replace( '</form>', do_blocks( '<!-- wp:wporg/search-autocomplete /--><!-- wp:wporg/search-filters /-->' ) . '</form>', $block_content );
 		}
 	}
 
